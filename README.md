@@ -2,8 +2,6 @@
 ````markdown
 # 📂 FileShare Network
 
-> Une application de partage de fichiers en réseau simple et élégante.  
-
 FileShare Network permet de **partager facilement des fichiers** entre plusieurs machines connectées au même réseau local.  
 Construit avec **React (Vite)**, **Express**, **TailwindCSS** et **Multer**, il offre une interface moderne et une API backend robuste.
 
@@ -16,7 +14,7 @@ Construit avec **React (Vite)**, **Express**, **TailwindCSS** et **Multer**, il 
 - 📥 Téléchargement des fichiers partagés  
 - 🗑️ Suppression des fichiers inutiles  
 - 🌐 Accessible depuis n’importe quel appareil du même réseau  
-- ⚡ UI réactive et rapide grâce à React + TailwindCSS  
+- ⚡ Interface moderne et responsive (React + TailwindCSS)  
 
 ---
 
@@ -33,8 +31,8 @@ Construit avec **React (Vite)**, **Express**, **TailwindCSS** et **Multer**, il 
 Clone le projet :
 
 ```bash
-git clone https://github.com/ARROKO/file-share-network.git
-cd file-share-network
+git clone https://github.com/ARROKO/FileShare-Network.git
+cd FileShare-Network
 ````
 
 Installe les dépendances :
@@ -72,103 +70,53 @@ npm run preview
 
 ## 📡 API Backend
 
-L’API permet d’interagir directement avec le serveur de fichiers.
 Toutes les routes commencent par :
 
 ```
 http://<IP_MACHINE>:4001/api
 ```
 
-### 🔹 Récupérer la liste des fichiers
+### 🔹 Liste des fichiers
 
 ```http
 GET /api/files
 ```
 
-**Réponse :**
-
-```json
-[
-  {
-    "id": "1735912400000-123456789-document.pdf",
-    "name": "document.pdf",
-    "originalName": "1735912400000-123456789-document.pdf",
-    "size": 24821,
-    "uploadDate": "2025-01-01T12:00:00.000Z",
-    "type": "pdf"
-  }
-]
-```
-
----
-
-### 🔹 Upload d’un fichier
+### 🔹 Upload
 
 ```http
 POST /api/upload
 ```
 
-**Body (form-data) :**
+Body (form-data) :
 
 ```
 file=<votre fichier>
 ```
 
-**Réponse :**
-
-```json
-{
-  "message": "Fichier uploadé avec succès",
-  "file": {
-    "id": "1735912400000-987654321-photo.png",
-    "name": "photo.png",
-    "size": 58321,
-    "type": "png"
-  }
-}
-```
-
----
-
-### 🔹 Télécharger un fichier
+### 🔹 Télécharger
 
 ```http
 GET /api/download/:filename
 ```
 
-➡️ Exemple :
-
-```
-GET /api/download/1735912400000-987654321-photo.png
-```
-
-Le fichier sera téléchargé avec son **nom original**.
-
----
-
-### 🔹 Supprimer un fichier
+### 🔹 Supprimer
 
 ```http
 DELETE /api/files/:filename
-```
-
-➡️ Exemple :
-
-```
-DELETE /api/files/1735912400000-987654321-photo.png
-```
-
-**Réponse :**
-
-```json
-{ "message": "Fichier supprimé avec succès" }
 ```
 
 ---
 
 ## 📸 Aperçu
 
-*(Ajoute ici des captures d’écran de l’UI une fois prêtes)*
+### 🔹 Page d’accueil
+
+![Accueil](src/assets/screenshots/img2.png)
+
+### 🔹 Upload de fichiers & Liste des fichiers partagés
+
+![Upload](src/assets/screenshots/img1.png)
 
 ---
 
@@ -187,10 +135,3 @@ Tu es libre de l’utiliser, le modifier et le distribuer.
 ---
 
 💡 **FileShare Network** : le moyen le plus simple de partager des fichiers sur ton réseau local.
-
-```
-
----
-
-👉 Veux-tu que j’ajoute aussi une **section “Déploiement”** (par exemple sur un VPS ou Docker) pour ton README, ou pour l’instant tu veux rester sur une doc usage local/réseau ?
-```
